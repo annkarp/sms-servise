@@ -13,7 +13,7 @@
     "@middy/core": "^3.4.0",
     "@middy/http-json-body-parser": "^3.4.0",
     "@middy/http-urlencode-body-parser": "^4.2.3",
-    "dotenv": "^16.0.3"
+    "serverless-dotenv-plugin": "^4.0.2"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.0.0",

@@ -7,7 +7,7 @@ import schema, { SMSInput } from './schema';
 const publishSMSEvent = async (smsInput: SMSInput): Promise<void> => {
   const eventInput = {
     Message: JSON.stringify(smsInput),
-    TopicArn: "arn:aws:sns:eu-west-2:120532362139:process-sms-topic"
+    TopicArn: process.env.PROCESS_SMS_TOPIC_ARN
   };
 
   const publishEventPromise = new SNS().publish(eventInput).promise();

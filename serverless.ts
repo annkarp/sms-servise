@@ -7,6 +7,7 @@ const serverlessConfiguration: AWS = {
   service: 'sms-service',
   frameworkVersion: '3',
   plugins: ['serverless-esbuild'],
+  useDotenv: true,
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
@@ -17,6 +18,9 @@ const serverlessConfiguration: AWS = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
+      PROCESS_SMS_TOPIC_ARN: '${env:PROCESS_SMS_TOPIC_ARN}',
+      PROCESS_SMS_QUEUE_ARN: '${env:PROCESS_SMS_QUEUE_ARN}',
+      SEND_SMS_TOPIC_ARN: '${env:SEND_SMS_TOPIC_ARN}',
     },
     iam: {
       role: {
@@ -24,17 +28,17 @@ const serverlessConfiguration: AWS = {
           {
             Action: ["sns:Publish"],
             Effect: "Allow",
-            Resource: ["arn:aws:sns:eu-west-2:120532362139:process-sms-topic"],
+            Resource: '${env:PROCESS_SMS_TOPIC_ARN}',
           },
           {
             Action: ["sqs:ReceiveMessage", "sqs:ReceiveMessage", "sqs:DeleteMessage", "sqs:GetQueueAttributes"],
             Effect: "Allow",
-            Resource: ["arn:aws:sqs:eu-west-2:120532362139:process-sms-queue"],
+            Resource: '${env:PROCESS_SMS_QUEUE_ARN}',
           },
           {
             Action: ["sns:Publish"],
             Effect: "Allow",
-            Resource: ["arn:aws:sns:eu-west-2:120532362139:send-sms-topic"],
+            Resource: '${env:SEND_SMS_TOPIC_ARN}',
           },
         ]
       }

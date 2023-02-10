@@ -6,7 +6,7 @@ const processSMS: SQSHandler = async (event: SQSEvent): Promise<void> => {
 
   const eventInput = {
     Message: Message,
-    TopicArn: "arn:aws:sns:eu-west-2:120532362139:send-sms-topic"
+    TopicArn: process.env.SEND_SMS_TOPIC_ARN
   };
 
   const publishEventPromise = new SNS().publish(eventInput).promise();
