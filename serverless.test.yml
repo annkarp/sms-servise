@@ -1,4 +1,0 @@
-- name: send sms
-  endpoint: {function: sendSMS}
-  response:
-    body: "The message successfully sent"

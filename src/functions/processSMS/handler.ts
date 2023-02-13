@@ -2,11 +2,11 @@ import { SNS } from 'aws-sdk';
 import { SQSHandler, SQSEvent } from "aws-lambda";
 
 const processSMS: SQSHandler = async (event: SQSEvent): Promise<void> => {
-  const { Message } = JSON.parse(event.Records[0].body);
+  const { number, message } = JSON.parse(event.Records[0].body);
 
   const eventInput = {
-    Message: Message,
-    TopicArn: process.env.SEND_SMS_TOPIC_ARN
+    Message: message,
+    PhoneNumber: number,
   };
 
   const publishEventPromise = new SNS().publish(eventInput).promise();

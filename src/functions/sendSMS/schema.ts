@@ -3,7 +3,7 @@ import { FromSchema } from "json-schema-to-ts";
 const smsInputSchema = {
   type: "object",
   properties: {
-    number: { type: 'number' },
+    number: { type: 'string' },
     message: { type: 'string' }
   },
   required: ['number', 'message']

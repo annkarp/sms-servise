@@ -6,7 +6,7 @@ import processSMS from '@functions/processSMS';
 const serverlessConfiguration: AWS = {
   service: 'sms-service',
   frameworkVersion: '3',
-  plugins: ['serverless-esbuild'],
+  plugins: ['serverless-esbuild', 'serverless-offline'],
   useDotenv: true,
   provider: {
     name: 'aws',

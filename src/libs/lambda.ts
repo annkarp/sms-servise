@@ -1,6 +1,6 @@
 import middy from "@middy/core"
-import urlEncodeBodyParser from "@middy/http-urlencode-body-parser"
+import middyJsonBodyParser from "@middy/http-json-body-parser"
 
 export const middyfy = (handler) => {
-  return middy(handler).use(urlEncodeBodyParser())
+  return middy(handler).use(middyJsonBodyParser())
 }
