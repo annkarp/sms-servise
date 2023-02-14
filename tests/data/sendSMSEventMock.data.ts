@@ -42,9 +42,6 @@ export const sendSMSEventMockData: APIGatewayProxyEvent = {
         clientCert: null,
       },
     },
-    body: JSON.stringify({
-      "number": "+447385592403",
-      "message": "Hey"
-    }),
+    body: "number=34535435345&message=Hello",
     isBase64Encoded: false,
 };

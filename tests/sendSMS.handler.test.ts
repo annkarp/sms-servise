@@ -18,7 +18,7 @@ describe('Unit test for sendSMS handler', () => {
 
   it("send-sms integration test", async () => {
 
-    const response = await sendSMS(sendSMSEventMockData as any, contextMockData);
+    const response = await sendSMS(sendSMSEventMockData, contextMockData);
 
     const { message } = JSON.parse(response.body);
 

@@ -2232,17 +2232,18 @@
   resolved "https://registry.npmjs.org/@middy/core/-/core-3.6.2.tgz"
   integrity sha512-/vyvG34RIt7CTmuB/jksGkk9vs6RCoOlRFPfdQq11dHkiKlT2mm8j/jZx7gSpEhXXh9LeaEMuKPnsgWBIlGS1g==
 
-"@middy/http-json-body-parser@^3.4.0":
-  version "3.6.2"
-  resolved "https://registry.npmjs.org/@middy/http-json-body-parser/-/http-json-body-parser-3.6.2.tgz"
-  integrity sha512-vFvlVtR99zwnr9clQkS+D9PAwDcjH4owLpYZ3yAkNI3z40L4QMF/s+5KI5fUd5RvZgTakAeZ5Qf+1QwTrts+Gw==
+"@middy/http-urlencode-body-parser@^4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@middy/http-urlencode-body-parser/-/http-urlencode-body-parser-4.2.4.tgz#a09305a389c7b6c67cba12e3f9eaad1b32c342a5"
+  integrity sha512-1W72Zdr4Hq3OUUR//LSAVYgeGHcxr2+yOM7ka/hyEPU7u7CIXHIRno+9xLKeb+A0vSPdK2YtKPxh8g+vBTqb5w==
   dependencies:
-    "@middy/util" "3.6.2"
+    "@middy/util" "4.2.4"
+    qs "6.11.0"
 
-"@middy/util@3.6.2":
-  version "3.6.2"
-  resolved "https://registry.npmjs.org/@middy/util/-/util-3.6.2.tgz"
-  integrity sha512-zjyjF5BdSNnDlZbTvfQwwuUIs3H5PpN/R3wOAipXhaGD/SjpIUBcJJPLUQHySeHoZym1FC3MJYczJDbYQWKWdg==
+"@middy/util@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@middy/util/-/util-4.2.4.tgz#29803b57085d30fac60958a4caf07daaf75fb20a"
+  integrity sha512-iE7KOc179YImNV6Kt1qMqc1Gl6VF60/dLrqa13g5sYiGCXaPCeb96xQPLta5OC7TuCgWljuwbefMVsYJcZjvRg==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -6203,7 +6204,7 @@ punycode@^2.1.0:
   resolved "https://registry.npmjs.org/punycode/-/punycode-2.3.0.tgz"
   integrity sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==
 
-qs@^6.10.3, qs@^6.11.0:
+qs@6.11.0, qs@^6.10.3, qs@^6.11.0:
   version "6.11.0"
   resolved "https://registry.npmjs.org/qs/-/qs-6.11.0.tgz"
   integrity sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==

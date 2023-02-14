@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@middy/core": "^3.4.0",
-    "@middy/http-json-body-parser": "^3.4.0",
+    "@middy/http-urlencode-body-parser": "^4.2.4",
     "serverless-dotenv-plugin": "^4.0.2"
   },
   "devDependencies": {
