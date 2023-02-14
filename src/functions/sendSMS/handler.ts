@@ -1,7 +1,7 @@
 import { SNS } from 'aws-sdk';
-import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/api-gateway';
-import { formatJSONResponse } from '@libs/api-gateway';
-import { middyfy } from '@libs/lambda';
+import type { ValidatedEventAPIGatewayProxyEvent } from '../../libs/api-gateway';
+import { formatJSONResponse } from '../../libs/api-gateway';
+import { middyfy } from '../../libs/lambda';
 import schema, { SMSInput } from './schema';
 
 const publishSMSEvent = async (smsInput: SMSInput): Promise<void> => {

@@ -1,14 +1,14 @@
-import axios from 'axios';
 import sinon from 'sinon';
-import AWS from 'aws-sdk-mock';
+import * as AWS from 'aws-sdk-mock';
+import { main as sendSMS} from '../src/functions/sendSMS/handler';
+import { sendSMSEventMockData } from './data/sendSMSEventMock.data';
+import { contextMockData } from './data/contextMock.data';
 
-describe('Unit test for sendSMS handler', function () {
+describe('Unit test for sendSMS handler', () => {
   let SNS_SPY;
 
-  beforeEach( async function() {
-    SNS_SPY = sinon.spy((params, callback) => {
-      callback(null, {});
-    });
+  beforeEach( async () => {
+    SNS_SPY = sinon.spy(({}, callback) => { callback(null, {}); });
     AWS.mock('SNS', 'publish', SNS_SPY);
   });
 
@@ -18,15 +18,11 @@ describe('Unit test for sendSMS handler', function () {
 
   it("send-sms integration test", async () => {
 
-    const data = {
-      number: '+447385592403',
-      message: 'Hello'
-    };
+    const response = await sendSMS(sendSMSEventMockData as any, contextMockData);
 
-    const response = await axios.post("http://localhost:3000/dev/send-sms", {
-      ...data
-    });
+    const { message } = JSON.parse(response.body);
 
-    expect(response.status).toEqual(200);
+    expect(response.statusCode).toEqual(200);
+    expect(message).toEqual('The message successfully sent');
   });
 });

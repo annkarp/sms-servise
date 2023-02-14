@@ -1,0 +1,50 @@
+import { APIGatewayProxyEvent } from "aws-lambda";
+
+export const sendSMSEventMockData: APIGatewayProxyEvent = {
+    resource: "/send-sms",
+    path: "/send-sms",
+    httpMethod: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    multiValueHeaders: {},
+    queryStringParameters: null,
+    multiValueQueryStringParameters: null,
+    pathParameters: null,
+    stageVariables: null,
+    requestContext: {
+      accountId: "",
+      apiId: "",
+      authorizer: {},
+      protocol: "HTTP/1.1",
+      httpMethod: "POST",
+      path: "/dev/send-sms",
+      stage: "dev",
+      requestId: "",
+      requestTimeEpoch: 1,
+      resourceId: "",
+      resourcePath: "/send-sms",
+      identity: {
+        accessKey: null,
+        accountId: null,
+        apiKey: '',
+        apiKeyId: '',
+        cognitoIdentityPoolId: null,
+        cognitoIdentityId: null,
+        caller: null,
+        sourceIp: "",
+        principalOrgId: null,
+        cognitoAuthenticationType: null,
+        cognitoAuthenticationProvider: null,
+        userArn: null,
+        userAgent: "",
+        user: null,
+        clientCert: null,
+      },
+    },
+    body: JSON.stringify({
+      "number": "+447385592403",
+      "message": "Hey"
+    }),
+    isBase64Encoded: false,
+};

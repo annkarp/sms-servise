@@ -1,7 +1,6 @@
 {
   "clearMocks": false,
-  "collectCoverage": true,
-  "coverageDirectory": "coverage",
+  "collectCoverage": false,
   "coverageProvider": "v8",
   "testEnvironment": "node",
   "testMatch": [
