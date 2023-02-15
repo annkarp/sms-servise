@@ -6,8 +6,10 @@ export const processSMSEventMockData: SQSEvent = {
       messageId: '1',
       receiptHandle: '',
       body: JSON.stringify({
-        "number": "+447385592403",
-        "message": "Hey"
+        Message: JSON.stringify({
+          "number": "+447385592403",
+          "message": "Hey"
+        })
       }),
       attributes: {
         ApproximateReceiveCount: '',
